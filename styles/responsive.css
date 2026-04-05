@@ -28,4 +28,27 @@
     td {
         padding: 10px;
     }
+
+     .header-row {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    .site-nav {
+        width: 100%;
+    }
+
+    .site-nav.is-open .nav-list {
+        display: flex;
+    }
+
+    .site-nav .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
 }

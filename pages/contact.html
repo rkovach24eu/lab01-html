@@ -6,18 +6,25 @@
     <title>Контакти</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/responsive.css">
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-    <div class="container">
-        <nav>
+    <div class="container header-row">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Меню
+        </button>
+
+        <nav id="site-nav" class="site-nav">
             <ul class="nav-list">
                 <li><a href="../index.html">Головна</a></li>
                 <li><a href="about.html">Про мене</a></li>
-                <li><a href="contact.html" class="active">Контакти</a></li>
+                <li><a href="contact.html">Контакти</a></li>
             </ul>
         </nav>
+
+        <button class="theme-toggle" type="button">Змінити тему</button>
     </div>
 </header>
 
@@ -26,15 +33,17 @@
         <h1>Контакти</h1>
         <p>На цій сторінці можна заповнити форму зворотного зв’язку.</p>
 
-        <form action="#" method="get" class="contact-form">
+        <form id="contact-form" class="contact-form" action="#" method="get" novalidate>
             <div class="form-group">
                 <label for="name">Ім’я:</label>
-                <input id="name" name="name" type="text" required minlength="2" maxlength="30">
+                <input id="name" name="name" type="text" minlength="2" maxlength="30">
+                <small class="error-message" id="name-error"></small>
             </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input id="email" name="email" type="email" required>
+                <input id="email" name="email" type="email">
+                <small class="error-message" id="email-error"></small>
             </div>
 
             <div class="form-group">
@@ -59,23 +68,33 @@
 
             <div class="form-group">
                 <label for="message">Повідомлення:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+                <textarea id="message" name="message" rows="5" maxlength="200"></textarea>
+                <div class="char-counter" id="message-counter">0 / 200</div>
+                <small class="error-message" id="message-error"></small>
             </div>
 
             <div class="form-group">
-                <label><input type="checkbox" name="agree" required> Погоджуюсь з правилами</label>
+                <label><input type="checkbox" name="agree" id="agree"> Погоджуюсь з правилами</label>
+                <small class="error-message" id="agree-error"></small>
             </div>
 
-            <button type="submit">Надіслати</button>
+            <div class="form-actions">
+                <button type="submit">Надіслати</button>
+                <button type="button" class="clear-draft-btn">Очистити чернетку</button>
+            </div>
         </form>
+
+        <div class="form-result" id="form-result" hidden></div>
     </section>
 </main>
 
 <footer class="site-footer">
     <div class="container">
-        <p>© 2026 Роман Ковач</p>
+        <p>© <span id="current-year"></span> Роман Ковач</p>
     </div>
 </footer>
+
+<button class="back-to-top" type="button" hidden>Вгору</button>
 
 </body>
 </html>

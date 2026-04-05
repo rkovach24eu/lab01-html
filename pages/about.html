@@ -6,25 +6,32 @@
     <title>Про мене</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/responsive.css">
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-    <div class="container">
-        <nav>
+    <div class="container header-row">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Меню
+        </button>
+
+        <nav id="site-nav" class="site-nav">
             <ul class="nav-list">
                 <li><a href="../index.html">Головна</a></li>
-                <li><a href="about.html" class="active">Про мене</a></li>
+                <li><a href="about.html">Про мене</a></li>
                 <li><a href="contact.html">Контакти</a></li>
             </ul>
         </nav>
+
+        <button class="theme-toggle" type="button">Змінити тему</button>
     </div>
 </header>
 
 <main class="container">
     <section class="section card">
         <h1>Про мене</h1>
-        <p>Я студент і вивчаю веб-розробку. Мені цікаво створювати сучасні сайти та працювати з HTML і CSS.</p>
+        <p>Я студент і вивчаю веб-розробку. Мені цікаво створювати сучасні сайти та працювати з JavaScript.</p>
     </section>
 
     <section class="section two-column">
@@ -48,9 +55,11 @@
 
 <footer class="site-footer">
     <div class="container">
-        <p>© 2026 Роман Ковач</p>
+        <p>© <span id="current-year"></span> Роман Ковач</p>
     </div>
 </footer>
+
+<button class="back-to-top" type="button" hidden>Вгору</button>
 
 </body>
 </html>

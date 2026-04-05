@@ -7,54 +7,85 @@
     <title>Мій перший HTML-сайт</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/responsive.css">
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
-    <div class="container">
-        <nav>
+    <div class="container header-row">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Меню
+        </button>
+
+        <nav id="site-nav" class="site-nav">
             <ul class="nav-list">
-                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="index.html">Головна</a></li>
                 <li><a href="pages/about.html">Про мене</a></li>
                 <li><a href="pages/contact.html">Контакти</a></li>
             </ul>
         </nav>
+
+        <button class="theme-toggle" type="button">Змінити тему</button>
     </div>
 </header>
 
 <main class="container">
     <section class="section card">
         <h1>Мій перший HTML-сайт</h1>
-        <p>Вітаю на моєму сайті. Я студент і вивчаю <strong>HTML</strong>, <strong>CSS</strong> та основи веб-розробки.</p>
-    </section>
-
-    <section class="section card">
-        <h2>Про мене</h2>
-        <p>Я люблю <em>програмування</em> і хочу навчитися створювати сучасні вебсайти.</p>
-        <p>Ця сторінка є прикладом багатосторінкового сайту, який я оформив за допомогою HTML5 і CSS3.</p>
+        <p>Вітаю на моєму сайті. Я студент і вивчаю <strong>HTML</strong>, <strong>CSS</strong> та <strong>JavaScript</strong>.</p>
     </section>
 
     <section class="section">
         <h2>Мої навички</h2>
-        <p>Зараз я вивчаю базові технології для створення сайтів і поступово покращую свої практичні навички.</p>
 
-        <div class="two-column">
-            <div class="card">
-                <h3>Технології, які я вивчаю</h3>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
+        <div class="filter-buttons">
+            <button type="button" class="filter-btn" data-filter="all">Усі</button>
+            <button type="button" class="filter-btn" data-filter="study">Навчання</button>
+            <button type="button" class="filter-btn" data-filter="projects">Проєкти</button>
+            <button type="button" class="filter-btn" data-filter="media">Медіа</button>
+        </div>
+
+        <div class="two-column cards-grid">
+            <div class="card service-card" data-category="study">
+                <h3>HTML</h3>
+                <p>Вивчаю структуру сторінок і семантичну розмітку.</p>
             </div>
 
-            <div class="card">
-                <h3>Мої цілі</h3>
-                <ol>
-                    <li>Вивчити HTML</li>
-                    <li>Вивчити CSS</li>
-                    <li>Вивчити JavaScript</li>
-                </ol>
+            <div class="card service-card" data-category="projects">
+                <h3>CSS</h3>
+                <p>Оформлюю багатосторінковий сайт та адаптивний дизайн.</p>
+            </div>
+
+            <div class="card service-card" data-category="media">
+                <h3>JavaScript</h3>
+                <p>Додаю інтерактивність: меню, тему, форму, модальні вікна.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section card">
+        <h2>FAQ / Акордеон</h2>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-trigger" type="button">Що я вивчаю зараз?</button>
+                <div class="accordion-content" hidden>
+                    <p>Зараз я вивчаю HTML, CSS і JavaScript для створення сучасних сайтів.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" type="button">Для чого потрібен JavaScript?</button>
+                <div class="accordion-content" hidden>
+                    <p>JavaScript додає інтерактивність: кнопки, форми, меню, модальні вікна та іншу логіку.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" type="button">Яка моя мета?</button>
+                <div class="accordion-content" hidden>
+                    <p>Навчитися створювати повноцінні вебсайти та фронтенд-проєкти.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -62,7 +93,7 @@
     <section class="section card">
         <h2>Моє фото</h2>
         <figure>
-            <img src="assets/img/photo.jpg" alt="Моє фото" width="300" height="300">
+            <img src="assets/img/photo.jpg" alt="Моє фото" width="300" height="300" class="modal-image-trigger">
             <figcaption>Фото, яке використовується на головній сторінці сайту.</figcaption>
         </figure>
     </section>
@@ -99,9 +130,19 @@
 
 <footer class="site-footer">
     <div class="container">
-        <p>© 2026 Роман Ковач</p>
+        <p>© <span id="current-year"></span> Роман Ковач</p>
     </div>
 </footer>
+
+<button class="back-to-top" type="button" hidden>Вгору</button>
+
+<div class="modal" id="image-modal" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close" type="button">Закрити</button>
+        <img src="" alt="Збільшене зображення" class="modal-image">
+    </div>
+</div>
 
 </body>
 </html>
