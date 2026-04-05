@@ -5,74 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Мій перший HTML сайт про мене та навчання">
     <title>Мій перший HTML-сайт</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Головна</a>
-        <a href="pages/about.html">Про мене</a>
-        <a href="pages/contact.html">Контакти</a>
-    </nav>
+<header class="site-header">
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="pages/about.html">Про мене</a></li>
+                <li><a href="pages/contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<main>
-    <h1>Мій перший HTML-сайт</h1>
+<main class="container">
+    <section class="section card">
+        <h1>Мій перший HTML-сайт</h1>
+        <p>Вітаю на моєму сайті. Я студент і вивчаю <strong>HTML</strong>, <strong>CSS</strong> та основи веб-розробки.</p>
+    </section>
 
-    <h2>Про мене</h2>
-    <p>Я студент і вивчаю <strong>HTML</strong>.</p>
+    <section class="section card">
+        <h2>Про мене</h2>
+        <p>Я люблю <em>програмування</em> і хочу навчитися створювати сучасні вебсайти.</p>
+        <p>Ця сторінка є прикладом багатосторінкового сайту, який я оформив за допомогою HTML5 і CSS3.</p>
+    </section>
 
-    <h2>Мої навички</h2>
-    <p>Я люблю <em>програмування</em> і веб-розробку.</p>
+    <section class="section">
+        <h2>Мої навички</h2>
+        <p>Зараз я вивчаю базові технології для створення сайтів і поступово покращую свої практичні навички.</p>
 
-    <p>Це мій перший сайт.</p>
+        <div class="two-column">
+            <div class="card">
+                <h3>Технології, які я вивчаю</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
 
-    <!-- список -->
-    <h2>Мої технології</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-    </ul>
+            <div class="card">
+                <h3>Мої цілі</h3>
+                <ol>
+                    <li>Вивчити HTML</li>
+                    <li>Вивчити CSS</li>
+                    <li>Вивчити JavaScript</li>
+                </ol>
+            </div>
+        </div>
+    </section>
 
-    <ol>
-        <li>Вивчити HTML</li>
-        <li>Вивчити CSS</li>
-        <li>Вивчити JS</li>
-    </ol>
+    <section class="section card">
+        <h2>Моє фото</h2>
+        <figure>
+            <img src="assets/img/photo.jpg" alt="Моє фото" width="300" height="300">
+            <figcaption>Фото, яке використовується на головній сторінці сайту.</figcaption>
+        </figure>
+    </section>
 
-    <!-- картинка -->
-    <figure>
-        <img src="assets/img/photo.jpg" alt="Моє фото" width="300">
-        <figcaption>Моє фото</figcaption>
-    </figure>
-
-    <!-- таблиця -->
-    <h2>Розклад</h2>
-    <table border="1">
-        <caption>Мій розклад</caption>
-        <thead>
-            <tr>
-                <th>День</th>
-                <th>Предмет</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Понеділок</td>
-                <td>Програмування</td>
-            </tr>
-            <tr>
-                <td>Вівторок</td>
-                <td>Математика</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <section class="section card">
+        <h2>Розклад навчання</h2>
+        <div class="table-wrapper">
+            <table>
+                <caption>Мій розклад</caption>
+                <thead>
+                    <tr>
+                        <th>День</th>
+                        <th>Предмет</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Понеділок</td>
+                        <td>Програмування</td>
+                    </tr>
+                    <tr>
+                        <td>Вівторок</td>
+                        <td>Математика</td>
+                    </tr>
+                    <tr>
+                        <td>Середа</td>
+                        <td>Англійська мова</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </main>
 
-<footer>
-    <p>© 2026 Роман Ковач</p>
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Роман Ковач</p>
+    </div>
 </footer>
 
 </body>

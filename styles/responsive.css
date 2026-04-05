@@ -1,0 +1,31 @@
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .two-column {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .container {
+        width: min(100% - 20px, 1100px);
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}

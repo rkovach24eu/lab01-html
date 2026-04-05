@@ -2,64 +2,80 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакти</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
 </head>
 <body>
 
-<nav>
-    <a href="../index.html">Головна</a>
-    <a href="about.html">Про мене</a>
-    <a href="contact.html">Контакти</a>
-</nav>
+<header class="site-header">
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="about.html">Про мене</a></li>
+                <li><a href="contact.html" class="active">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-<h1>Контакти</h1>
+<main class="container">
+    <section class="section card">
+        <h1>Контакти</h1>
+        <p>На цій сторінці можна заповнити форму зворотного зв’язку.</p>
 
-<form action="#" method="get">
+        <form action="#" method="get" class="contact-form">
+            <div class="form-group">
+                <label for="name">Ім’я:</label>
+                <input id="name" name="name" type="text" required minlength="2" maxlength="30">
+            </div>
 
-    <p>
-        <label for="name">Ім’я:</label>
-        <input id="name" type="text" required>
-    </p>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" required>
+            </div>
 
-    <p>
-        <label for="email">Email:</label>
-        <input id="email" type="email" required>
-    </p>
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input id="phone" name="phone" type="tel" placeholder="+380XXXXXXXXX">
+            </div>
 
-    <p>
-        <label for="phone">Телефон:</label>
-        <input id="phone" type="tel">
-    </p>
+            <div class="form-group">
+                <label for="topic">Тема:</label>
+                <select id="topic" name="topic">
+                    <option value="study">Навчання</option>
+                    <option value="work">Робота</option>
+                    <option value="other">Інше</option>
+                </select>
+            </div>
 
-    <p>
-        <label for="topic">Тема:</label>
-        <select id="topic">
-            <option>Навчання</option>
-            <option>Робота</option>
-        </select>
-    </p>
+            <fieldset class="form-group">
+                <legend>Як зручніше зв’язатися</legend>
+                <label><input type="radio" name="contactWay" value="email" checked> Email</label>
+                <label><input type="radio" name="contactWay" value="phone"> Телефон</label>
+            </fieldset>
 
-    <fieldset>
-        <legend>Як зв’язатися</legend>
-        <label><input type="radio" name="contact"> Email</label>
-        <label><input type="radio" name="contact"> Телефон</label>
-    </fieldset>
+            <div class="form-group">
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
 
-    <p>
-        <label for="message">Повідомлення:</label><br>
-        <textarea id="message"></textarea>
-    </p>
+            <div class="form-group">
+                <label><input type="checkbox" name="agree" required> Погоджуюсь з правилами</label>
+            </div>
 
-    <p>
-        <label>
-            <input type="checkbox" required>
-            Погоджуюсь
-        </label>
-    </p>
+            <button type="submit">Надіслати</button>
+        </form>
+    </section>
+</main>
 
-    <button type="submit">Надіслати</button>
-
-</form>
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Роман Ковач</p>
+    </div>
+</footer>
 
 </body>
 </html>

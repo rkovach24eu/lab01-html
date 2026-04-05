@@ -2,31 +2,55 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Про мене</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
 </head>
 <body>
 
-<nav>
-    <a href="../index.html">Головна</a>
-    <a href="about.html">Про мене</a>
-    <a href="contact.html">Контакти</a>
-</nav>
+<header class="site-header">
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="about.html" class="active">Про мене</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-<h1>Про мене</h1>
+<main class="container">
+    <section class="section card">
+        <h1>Про мене</h1>
+        <p>Я студент і вивчаю веб-розробку. Мені цікаво створювати сучасні сайти та працювати з HTML і CSS.</p>
+    </section>
 
-<p>Я студент і вчу веб-розробку.</p>
+    <section class="section two-column">
+        <div class="card">
+            <h2>Моє відео</h2>
+            <video controls>
+                <source src="../assets/media/video.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+        </div>
 
-<h2>Моє відео</h2>
-<video controls width="400">
-    <source src="../assets/media/video.mp4" type="video/mp4">
-    Ваш браузер не підтримує відео
-</video>
+        <div class="card">
+            <h2>Мій аудіозапис</h2>
+            <audio controls>
+                <source src="../assets/media/audio.mp3" type="audio/mpeg">
+                Ваш браузер не підтримує аудіо.
+            </audio>
+        </div>
+    </section>
+</main>
 
-<h2>Мій аудіо</h2>
-<audio controls>
-    <source src="../assets/media/audio.mp3" type="audio/mpeg">
-    Ваш браузер не підтримує аудіо
-</audio>
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Роман Ковач</p>
+    </div>
+</footer>
 
 </body>
 </html>
